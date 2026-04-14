@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body style="text-align:center;height:100vh;">
+
+<h1>Our Memories 📸</h1>
+
+<img id="slide" width="300">
+
+<br><br>
+
+<a href="/video" target="_parent">
+
+<button>
+Video 🎥
+</button>
+
+</a>
+
+<script>
+
+var imgs=["photo1.jpeg","photo2.jpeg"];
+
+var i=0;
+
+function slide(){
+
+document.getElementById("slide").src="/static/"+imgs[i];
+
+i++;
+
+if(i==imgs.length){
+
+i=0;
+
+}
+
+setTimeout(slide,2000);
+
+}
+
+slide();
+
+</script>
+
+</body>
+
+</html>

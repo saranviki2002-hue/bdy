@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background:#ffe6f2;text-align:center;height:100vh;">
+
+<h1>Gift for you 💝</h1>
+
+<div onclick="openGift()" style="font-size:90px;cursor:pointer;">🎁</div>
+
+<h2 id="msg" style="display:none;">
+You are my life ❤️
+</h2>
+
+<a href="/message" target="_parent">
+
+<button id="btn" style="display:none;">
+Message 💌
+</button>
+
+</a>
+
+<script>
+
+function openGift(){
+
+document.querySelector("div").innerHTML="💖";
+
+document.getElementById("msg").style.display="block";
+
+document.getElementById("btn").style.display="inline";
+
+}
+
+</script>
+
+</body>
+
+</html>

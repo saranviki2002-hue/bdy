@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background:#e0f7fa;text-align:center;height:100vh;">
+
+<h1>Pop balloons 🎈</h1>
+
+<span onclick="pop(this)" style="font-size:70px;">🎈</span>
+<span onclick="pop(this)" style="font-size:70px;">🎈</span>
+<span onclick="pop(this)" style="font-size:70px;">🎈</span>
+
+<h2 id="done" style="display:none;">
+You make me happy 💖
+</h2>
+
+<a href="/gift" target="_parent">
+
+<button id="btn" style="display:none;">
+Gift 🎁
+</button>
+
+</a>
+
+<script>
+
+let c=0;
+
+function pop(x){
+
+x.innerHTML="💥";
+
+c++;
+
+if(c==3){
+
+document.getElementById("done").style.display="block";
+
+document.getElementById("btn").style.display="inline";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

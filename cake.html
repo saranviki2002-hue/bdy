@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background:#fff0f5;text-align:center;height:100vh;">
+
+<h1>Make a wish 🕯</h1>
+
+<div onclick="blow()" style="font-size:90px;cursor:pointer;">🕯</div>
+
+<h2 id="msg" style="display:none;color:red;">
+Your wish will come true ❤️
+</h2>
+
+<a href="/balloons" target="_parent">
+
+<button id="btn" style="display:none;">
+Next 🎈
+</button>
+
+</a>
+
+<script>
+
+function blow(){
+
+document.querySelector("div").innerHTML="💨";
+
+document.getElementById("msg").style.display="block";
+
+document.getElementById("btn").style.display="inline";
+
+}
+
+</script>
+
+</body>
+
+</html>

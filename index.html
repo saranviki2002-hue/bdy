@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saranya ❤️ Dinesh</title>
+
+<style>
+
+body{
+margin:0;
+font-family:cursive;
+overflow:hidden;
+color:white;
+text-align:center;
+background:black;
+}
+
+.page{
+display:none;
+height:100vh;
+padding:40px 20px;
+overflow:auto;
+animation:flip 1s;
+}
+
+@keyframes flip{
+from{transform:rotateY(90deg);opacity:0;}
+to{transform:rotateY(0deg);opacity:1;}
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.2}
+to{opacity:1}
+}
+
+.typing{
+border-right:3px solid white;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(40,end) forwards, blink 1s infinite;
+}
+
+@keyframes typing{to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+.heart{animation:beat 1s infinite;}
+
+@keyframes beat{
+0%{transform:scale(1)}
+25%{transform:scale(1.1)}
+40%{transform:scale(1)}
+}
+
+button{
+padding:14px 28px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+margin-top:20px;
+box-shadow:0 0 20px pink;
+}
+
+button:hover{transform:scale(1.05);}
+
+img,video{
+border-radius:15px;
+box-shadow:0 0 20px pink;
+max-width:90%;
+}
+
+#loveBar{
+transition:width 0.2s linear;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<180;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+document.body.appendChild(s);
+}
+</script>
+
+<audio id="music" loop>
+<source src="/static/song.mp3">
+</audio>
+
+<!-- PASSWORD -->
+<div id="p0" class="page" style="display:block">
+<h1>🔐 Enter the magical words to open my heart</h1>
+<h3>Hint: words we both feel deeply ❤️</h3>
+<input id="pass">
+<br>
+<button onclick="check()">Unlock 💖</button>
+</div>
+
+<!-- COUNTDOWN -->
+<div id="countPage" class="page">
+<h1>Something special waiting for you 💫</h1>
+<h1 id="count" style="font-size:70px">3</h1>
+</div>
+
+<!-- BALLOONS -->
+<div id="balloonsPage" class="page">
+<h1 class="heart">🎈 Happy Birthday my miracle ✨❤️ 🎈</h1>
+<h2>You are my life ❤️</h2>
+<button onclick="nextPage('p1')">Start Journey 💞</button>
+</div>
+
+<!-- INTRO -->
+<div id="p1" class="page">
+<h1 class="typing">
+In a world full of temporary things…
+you are my forever ❤️
+</h1>
+
+<h2>I didn’t choose you… my heart recognised you 💞</h2>
+<h3>You became my heartbeat 💓</h3>
+
+<button onclick="nextPage('p2')">Our Story ⏳</button>
+</div>
+
+<!-- TIMELINE (FULL RESTORED) -->
+<div id="p2" class="page">
+
+<h1>💞 Our Beautiful Love Journey 💞</h1>
+
+<h3>
+🌸 Feb 1 2026 — Destiny brought us together ✨ <br><br>
+💬 Feb 8 2026 — First magical text 💌 <br><br>
+📞 Feb 9 2026 — Your voice = peace 🦋 <br><br>
+🙏 Feb 18 2026 — Temple moment 🌺 <br><br>
+💐 Feb 20 2026 — Heart started loving 💖 <br><br>
+🚇 Feb 24 2026 — Unexpected smile 💓 <br><br>
+🚉 Feb 26 2026 — Only you in crowd ❤️ <br><br>
+🛍 Feb 27 2026 — Simple happiness 😊 <br><br>
+💍 Mar 4 2026 — Promise started ✨ <br><br>
+🎬 Mar 7 2026 — Movie date 🎥 <br><br>
+🚇 Mar 10 2026 — Every journey = you 💞 <br><br>
+🎁 Mar 20 2026 — Your smile = goal 🎀 <br><br>
+🌊 Apr 5 2026 — Waves saw love 🌊❤️ <br><br>
+💒 Aug 23 2026 — Forever begins 💍✨
+</h3>
+
+<button onclick="nextPage('p3')">Love Meter ❤️</button>
+</div>
+
+<!-- LOVE METER -->
+<div id="p3" class="page">
+
+<h1>How much I love you ❤️</h1>
+
+<div style="width:300px;height:30px;background:white;border-radius:30px;margin:auto;overflow:hidden">
+<div id="loveBar" style="height:100%;width:0%;background:pink"></div>
+</div>
+
+<h1 id="loveText" style="font-size:60px">0 %</h1>
+
+<h2>No limit… only forever ♾</h2>
+
+<button onclick="nextPage('p4')">Open Heart 💌</button>
+
+</div>
+
+<!-- LETTER -->
+<div id="p4" class="page">
+<h1>💌 Open My Heart</h1>
+
+<div onclick="openLetter()" style="font-size:90px;cursor:pointer">💌</div>
+
+<h2 id="letter" style="display:none">
+You are my peace 🕊<br><br>
+You are my happiness ❤️<br><br>
+You are my everything 💞
+</h2>
+
+<button id="b4" onclick="nextPage('p5')" style="display:none">Future 🔮</button>
+</div>
+
+<!-- FUTURE (RESTORED 3 CHILDREN) -->
+<div id="p5" class="page">
+<h1>Our Future 🔮</h1>
+
+<h2>
+You ❤️ Me forever 🤝 <br><br>
+3 Children 👶👶👶 <br><br>
+Happy Home 🏡 <br><br>
+Forever Love 💍
+</h2>
+
+<button onclick="nextPage('p6')">Birthday 🎂</button>
+</div>
+
+<!-- BIRTHDAY -->
+<div id="p6" class="page">
+<h1>Happy Birthday my miracle ✨❤️</h1>
+<button onclick="nextPage('p7')">Cut Cake 🎂</button>
+</div>
+
+<!-- CAKE -->
+<div id="p7" class="page">
+<h1>Cut the Cake 🎂</h1>
+
+<div onclick="cake()" style="font-size:90px;cursor:pointer">🎂</div>
+
+<h2 id="cakeMsg" style="display:none">Happy Birthday my love ❤️</h2>
+
+<button id="b7" onclick="nextPage('p8')" style="display:none">Memories 📸</button>
+</div>
+
+<!-- PHOTOS -->
+<div id="p8" class="page">
+<h1>Memories 📸</h1>
+<img id="slide">
+<button onclick="nextPage('p9')">Video 🎥</button>
+</div>
+
+<!-- VIDEO -->
+<div id="p9" class="page">
+<h1>Video 🎥</h1>
+
+<video controls>
+<source src="/static/vd.mp4">
+</video>
+
+<button onclick="nextPage('p10')">Final 💖</button>
+</div>
+
+<!-- FINAL -->
+<div id="p10" class="page">
+<h1>I Love You ❤️</h1>
+<h2>No matter what… I choose you forever 💍</h2>
+<h1>Happy Birthday my miracle ✨❤️</h1>
+
+<button onclick="nextPage('marriagePage')">💍 Our Forever Countdown</button>
+</div>
+
+<!-- 💍 COUNTDOWN PAGE (FIXED QUOTES ROTATION) -->
+<div id="marriagePage" class="page">
+
+<h1>💍 Our Forever Countdown 💍</h1>
+
+<h2 id="cd" style="font-size:40px"></h2>
+<h3 id="quote">Love is building forever ❤️</h3>
+
+</div>
+
+<script>
+
+function nextPage(id){
+let pages=document.getElementsByClassName("page");
+for(let i=0;i<pages.length;i++){
+pages[i].style.display="none";
+}
+document.getElementById(id).style.display="block";
+}
+
+function check(){
+let pwd=document.getElementById("pass").value.trim();
+if(pwd=="iloveyou"){
+document.getElementById("music").play();
+nextPage("countPage");
+countdown();
+}else{
+alert("Try again 💖");
+}
+}
+
+function countdown(){
+let n=3;
+let c=document.getElementById("count");
+
+let t=setInterval(()=>{
+n--;
+c.innerHTML=n;
+if(n==0){
+clearInterval(t);
+nextPage("balloonsPage");
+}
+},1000);
+}
+
+/* LOVE */
+let loveStarted=false;
+
+setInterval(()=>{
+
+if(document.getElementById("p3").style.display=="block" && !loveStarted){
+loveStarted=true;
+
+let bar=document.getElementById("loveBar");
+let text=document.getElementById("loveText");
+
+let w=0;
+
+let i=setInterval(()=>{
+
+if(w<=100){
+bar.style.width=w+"%";
+text.innerHTML=w+" %";
+w++;
+}else{
+text.innerHTML="∞ %";
+clearInterval(i);
+loveStarted=false;
+}
+
+},20);
+
+}
+
+},500);
+
+/* LETTER */
+function openLetter(){
+document.getElementById("letter").style.display="block";
+document.getElementById("b4").style.display="inline-block";
+}
+
+/* CAKE */
+function cake(){
+document.querySelector("#p7 div").innerHTML="🍰";
+document.getElementById("cakeMsg").style.display="block";
+document.getElementById("b7").style.display="inline-block";
+}
+
+/* SLIDESHOW */
+let imgs=["/static/photo1.jpeg","/static/photo2.jpeg","/static/photo3.jpeg","/static/photo4.jpeg"];
+let j=0;
+
+setInterval(()=>{
+let img=document.getElementById("slide");
+if(img){
+img.src=imgs[j];
+j++;
+if(j==imgs.length) j=0;
+}
+},2000);
+
+/* COUNTDOWN + SINGLE QUOTE ROTATION */
+let target=new Date("Aug 23, 2026 00:00:00").getTime();
+
+let quotes=[
+"Love is not time, it is eternity ❤️",
+"Two hearts becoming one 💍",
+"Every second closer to forever ✨",
+"Our story is destiny 🌸",
+"You + Me = Infinity 💞"
+];
+
+let qIndex=0;
+
+setInterval(()=>{
+
+if(document.getElementById("marriagePage").style.display=="block"){
+
+let now=new Date().getTime();
+let diff=target-now;
+
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((diff%(1000*60*60))/(1000*60));
+let s=Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("cd").innerHTML=
+d+" Days ❤️ "+h+"h "+m+"m "+s+"s";
+
+/* ONE BY ONE QUOTES */
+document.getElementById("quote").innerHTML=quotes[qIndex];
+qIndex++;
+if(qIndex>=quotes.length) qIndex=0;
+
+}
+
+},3000);
+
+</script>
+
+</body>
+</html>
